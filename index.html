@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Effective JavaScript: Frogger</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Effective JavaScript: Frogger</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 </head>
+
 <body>
-    <script src="js/resources.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/engine.js"></script>
+  <div class="container">
+    <div class="score-board">
+      <div id="mySidenav" class="sidenav">
+        <a href="#" id="settings" onclick="myFunction()">Settings <span class="fas fa-cog fa-lg"> </span></a>
+      </div>
+      <div class="level-div">
+        <div><label for="label">Level: </label><span id="label">1</span></div>
+        <div><label for="difficulty-span">Difficulty:</label><span id="difficulty-span">Easy</span></div>
+      </div>
+      <ul class="star">
+        <!-- <li><i class="fas fa-star fa-2x"></i></li> -->
+      </ul>
+    </div>
+    <div id="canvas"></div>
+  </div>
+  <script src="js/resources.js"></script>
+  <script src="js/engine.js"></script>
+  <div class="modal">
+    <div id="snackbar">
+      <span class="close">&times;</span>
+      <div>
+      <fieldset>
+      <legend>Select level:</legend>
+        <input type="radio" name="leveltype" value="Easy" id="easy" class="radio-level" checked="true"/>
+        <label for="easy" class="label-level">Easy</label>
+        <input type="radio" name="leveltype" value="Medium" id="medium" class="radio-level"/>
+        <label for="medium" class="label-level">Medium</label>
+        <input type="radio" name="leveltype" value="Difficult" id="difficult" class="radio-level"/>
+        <label for="difficult" class="label-level">Difficult</label>
+      </fieldset>
+      <fieldset>
+      <legend>Select Player:</legend>
+      <div>
+        <input type="radio" name="player" value="boy" id="char-boy" class="player-radio" checked="true"/>
+        <input type="radio" name="player" value="cat-girl" id="cat-girl" class="player-radio"/>
+        <input type="radio" name="player" value="horn-girl" id="horn-girl" class="player-radio"/>
+        <input type="radio" name="player" value="pink-girl" id="pink-girl" class="player-radio"/>
+        <input type="radio" name="player" value="princess-girl" id="princess-girl" class="player-radio"/>
+      </div>
+      <div>
+        <label for="char-boy"><img src="images/char-boy.png" class="image-player"></label>
+        <label for="cat-girl"><img src="images/char-cat-girl.png" class="image-player"></label>
+        <label for="horn-girl"><img src="images/char-horn-girl.png" class="image-player"></label>
+        <label for="pink-girl"><img src="images/char-pink-girl.png" class="image-player"></label>
+        <label for="princess-girl"><img src="images/char-princess-girl.png" class="image-player"></label>
+      </div>
+    </fieldset>
+  </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
 </body>
+
 </html>

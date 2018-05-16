@@ -1,6 +1,24 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Table of Contents
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+* [Instructions](#instructions)
+* [Contributing](#contributing)
+
+## Instructions
+
+* Steps to get this code up and running.
+1. Clone the respository from github.
+2. Run the index.html in browser.Start playing.
+
+* Softwares needs to be configured or installed already.
+1. Any browser(chrome,safari,IE)
+
+* How does the Game works.
+This game has bugs as enemies and there is a player, who can move in all four directions using arrow keys.To win the game player has to reach up to the water (blue bricks) by absconding the enemies.Every time player wins, scores star and levels up by one.
+The game starts with Difficulty level "Easy".The game levels and player can be changed in settings tab.
+Difficulty level also changes to medium when player exceeds level 6 and Difficult when player exceeds the level 12.
+As the difficulty level changes the speed of the enemies gets changed randomly.
+
+If any help required, mail me on kabburebh@gmail.com
