@@ -1,3 +1,4 @@
+'use strict';
 const starUl = document.querySelector(".star");
 const levelSpan = document.querySelector(".level-div").querySelector("span");
 let interval;
@@ -75,39 +76,40 @@ class Player {
     //update is called everytime but we need to execute only when the player is moved
     if (this.moved) {
       if (this.directionOfMove === 'up') {
-        this.y = this.y - 1000 * dt;
+        this.y = this.y - 4000 * dt;
       } else if (this.directionOfMove === 'down') {
-        this.y = this.y + 1000 * dt;
+        this.y = this.y + 4000 * dt;
       }
       this.moved = false;
       //show win sprite once the player reached water
       if (this.y < 10 && !this.win) {
         this.win = true;
+        var self = this;
         let j = setInterval(function() {
-          player.win = false;
+          self.win = false;
           var li = document.createElement("li");
           //add star every time player wins
           li.className = "fas fa-star fa-2x";
           starUl.appendChild(li);
           //Update the level by 1
-          levelSpan.innerHTML = `${++player.level}`;
+          levelSpan.innerHTML = `${++self.level}`;
           //change the difficulty level after some level
-          if (player.level > 5 && player.leveltype === "Easy")
+          if (self.level > 5 && self.leveltype === "Easy")
             changeLevelToMedium();
-          else if (player.level > 12 && player.leveltype === "Medium")
+          else if (self.level > 12 && self.leveltype === "Medium")
             changeLevelToDifficult();
-          player.reset();
+          self.reset();
           clearInterval(j);
         }, 300);
       }
 
 
       if (this.directionOfMove === 'left')
-        this.x = this.x - 1000 * dt;
+        this.x = this.x - 4000 * dt;
       else if (this.directionOfMove === 'right')
-        this.x = this.x + 1000 * dt;
+        this.x = this.x + 4000 * dt;
       //check that player should not move outof canvas
-      if (this.x < 10 || this.x > ctx.canvas.width || this.y > 400) {
+      if (this.x < 10 || this.x > 430 || this.y > 400) {
         this.reset();
       }
     }
